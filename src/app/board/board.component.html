@@ -1,0 +1,18 @@
+<div class="tic-tac-container">
+    <h2 *ngIf="!winner && isSquareFull !== undefined">{{activePlayer}}'s turn</h2>
+    <div *ngIf="!winner && isSquareFull !== undefined" class="tic-tac-container__box">
+        <div *ngFor="let val of squares;index as i" class="tic-tac-container__box__item">
+            <button (click)="makeMove(i)" class="btn btn-null" *ngIf="!val">{{ val }}</button>
+            <button (click)="makeMove(i)" class="btn btn-x" *ngIf="val == 'X'">{{ val }}</button>
+            <button (click)="makeMove(i)" class="btn btn-0" *ngIf="val == 'O'">{{ val }}</button>
+        </div>
+    </div>
+    <div *ngIf="winner && isSquareFull !== undefined">
+        <h2>{{activePlayer}} Wins !</h2>
+        <p>Want to play again ? <a [routerLink]="['/welcome']">Click Here</a></p>
+    </div>
+    <div *ngIf="isSquareFull === undefined">
+        <h2>Match Draw !</h2>
+        <p>Want to play again ? <a [routerLink]="['/welcome']">Click Here</a></p>
+    </div>
+</div>

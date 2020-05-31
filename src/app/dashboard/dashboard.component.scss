@@ -1,0 +1,21 @@
+@mixin container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 308px;
+}
+
+.player-form-container {
+    @include container;
+    .player-form {
+        display: flex;
+        flex-flow: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .player-form-container {
+        width: 80%;
+    }
+}

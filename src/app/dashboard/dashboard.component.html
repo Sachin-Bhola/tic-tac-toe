@@ -1,0 +1,14 @@
+<div class="player-form-container">
+    <h3>LET'S PLAY TIC TAC TOE</h3>
+    <form class="player-form" [formGroup]="playersDetailsForm" (ngSubmit)="startGame()" >
+        <mat-form-field appearance="fill">
+            <mat-label>Player 1</mat-label>
+            <input matInput formControlName="player1">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Player 2</mat-label>
+            <input matInput formControlName="player2">
+        </mat-form-field>
+        <button type="submit" mat-raised-button [disabled]="playersDetailsForm.invalid" color="primary">Start</button>
+    </form>
+</div>
